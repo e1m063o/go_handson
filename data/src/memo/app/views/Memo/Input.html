@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<body>
+    <form name="form01" method="POST" action="/entry">
+        タイトル：<input type="text" name="title">
+        <br>
+        本文：<input type="text" name="body">
+        <br><br>
+        <input type="submit" value="登録">
+        <input type="hidden" name="csrf_token" value="{{.csrf_token}}" />
+    </form>
+</body>
+</html>

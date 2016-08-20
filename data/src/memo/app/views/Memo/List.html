@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="ja">
+<body>
+    {{range .memos}}
+        <p>タイトル:{{.Title}} 本文:{{.Body}} {{.Created}} <a href="/show/{{.ID}}">詳細</a> <a href="/delete?id={{.ID}}">削除</a></p>
+    {{end}}
+</body>
+</html>
