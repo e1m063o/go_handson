@@ -68,9 +68,9 @@ func (c Memo) Update(id, title, body string) revel.Result {
 	if c.Validation.HasErrors() {
 		c.Validation.Keep()
 		c.FlashParams()
-		return c.Redirect("/show/" + id)
+		return c.Redirect("/input")
 	}
-
 	memo.UpdateMemo(id, title, body)
-	return c.Redirect("/show/" + id)
+	c.Session["id"] = id
+	return c.Redirect("/finish")
 }

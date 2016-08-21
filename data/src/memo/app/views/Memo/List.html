@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <body>
+    <ul>
+        <li><a href="/input">登録</a></li>
+        <li><a href="/list">一覧</a></li>
+    </ul>
     {{range .memos}}
         <p>タイトル:{{.Title}} 本文:{{.Body}} {{.Created}} <a href="/show/{{.ID}}">詳細</a> <a href="/delete?id={{.ID}}">削除</a></p>
     {{end}}
