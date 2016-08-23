@@ -1,0 +1,17 @@
+{{template "header.html" .}}
+{{template "menu.html" .}}
+{{template "flash.html" .}}
+<form name="form01" method="POST" action="/update" class="ui form">
+  <div class="field">
+    <label>タイトル</label>
+    <input type="text" name="title" value="{{.memo.Title}}">
+  </div>
+  <div class="field">
+    <label>本文</label>
+    <input type="text" name="body" value="{{.memo.Body}}">
+  </div>
+  <input type="submit" value="更新" class="ui primary basic button">
+  <input type="hidden" name="id" value="{{.memo.ID}}" />
+  <input type="hidden" name="csrf_token" value="{{.csrf_token}}" />
+</form>
+{{template "footer.html" .}}

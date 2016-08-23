@@ -1,0 +1,16 @@
+{{template "header.html" .}}
+{{template "menu.html" .}}
+{{template "flash.html" .}}
+<form name="form01" method="POST" action="/entry" class="ui form">
+  <div class="field">
+    <label>タイトル</label>
+    <input type="text" name="title">
+  </div>
+  <div class="field">
+    <label>本文</label>
+    <input type="text" name="body">
+  </div>
+  <input type="submit" value="登録" class="ui primary basic button">
+  <input type="hidden" name="csrf_token" value="{{.csrf_token}}" />
+</form>
+{{template "footer.html" .}}

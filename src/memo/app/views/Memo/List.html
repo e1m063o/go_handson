@@ -1,0 +1,17 @@
+{{template "header.html" .}}
+{{template "menu.html" .}}
+{{template "flash.html" .}}
+{{range .memos}}
+  <div class="ui compact segments">
+    <div class="ui segment">
+      <h3>{{.Title}}</h3>
+      {{.Body}}
+    </div>
+    <div class="ui right aligned segment">{{.Created}}</div>
+    <div class="ui center aligned segment">
+      <a href="/show/{{.ID}}" class="ui basic green button">詳細</a>
+      <a href="/delete?id={{.ID}}" class="ui basic red button">削除</a>
+    </div>
+  </div>
+{{end}}
+{{template "footer.html" .}}
